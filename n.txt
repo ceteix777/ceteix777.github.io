@@ -1,0 +1,33 @@
+
+
+Update ROUTER_ADDRESS to v2 in /src/constants/index.ts line 3
+0x10ED43C718714eb63d5aA57B78B54704E256024E
+Install v2 SDK
+npm i @overage69/pancake-sdk-v2
+Install missing dependencies
+npm i @reach/portal  --legacy-peer-deps
+npm i @uniswap/v2-core
+npm i ajv
+npm i cids
+npm i ethers
+npm i multicodec
+npm i multihashes
+npm i @types/node
+
+n@ubuntu:~/swap/pswap-v1$ npm cache clean -f
+npm WARN using --force Recommended protections disabled.
+n@ubuntu:~/swap/pswap-v1$ rm -rf node_modules
+n@ubuntu:~/swap/pswap-v1$ npm i
+
+wiping away node_modules and trying again
+different version of npm / node
+npm cache clean
+Delete your $HOME/.node-gyp directory
+
+## Run `sudo apt-get install -y nodejs` to install Node.js 15.x and npm
+## You may also need development tools to build native addons:
+     sudo apt-get install gcc g++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+     echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
