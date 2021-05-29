@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Token, Trade } from '@pancakeswap-libs/sdk'
+import { CurrencyAmount, JSBI, Token, Trade } from '@overage69/pancake-sdk-v2'
 import React, { useCallback, useContext, useEffect, useMemo, useState, useRef } from 'react'
 import { ArrowDown } from 'react-feather'
 import { CardBody, ArrowDownIcon, Button, IconButton, Text, useModal, Link, Flex } from '@pancakeswap-libs/uikit'
@@ -102,6 +102,7 @@ const Swap = () => {
   )
   const showWrap: boolean = wrapType !== WrapType.NOT_APPLICABLE
   const trade = showWrap ? undefined : v2Trade
+  // const trade = v2Trade
 
   // Manage disabled trading pairs that should redirect users to V2
   useEffect(() => {

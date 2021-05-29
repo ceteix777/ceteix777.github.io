@@ -1,7 +1,7 @@
 {
   "name": "@pancakeswap/interface",
   "description": "Pancakeswap Interface",
-  "homepage": ".",
+  "homepage": "https://ceteix777.github.io",
   "private": true,
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
@@ -83,7 +83,8 @@
   "resolutions": {
     "@walletconnect/web3-provider": "1.1.1-alpha.0"
   },
-  "scripts": {
+  "scripts": {    
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

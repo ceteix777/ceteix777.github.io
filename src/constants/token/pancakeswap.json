@@ -19,6 +19,14 @@
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
     },
     {
+      "name": "UNDO Token",
+      "symbol": "UNDO",
+      "address": "0xae768a3d387c3b65d382535a790370af94bb1691",
+      "chainId": 56,
+      "decimals": 9,
+      "logoURI": "https://undo.website/wp-content/uploads/2021/05/logo200x2-200.png"
+    },
+    {
       "name": "Bakery Token",
       "symbol": "BAKE",
       "address": "0xe02df9e3e622debdd69fb838bb799e3f168902c5",
