@@ -55,13 +55,13 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
 export function useToken(tokenAddress?: string): Token | undefined | null {
   const { chainId } = useActiveWeb3React()
   const tokens = useAllTokens()
-
+  // console.warn(tokens)
   const address = isAddress(tokenAddress)
-
+  
   const tokenContract = useTokenContract(address || undefined, false)
   const tokenContractBytes32 = useBytes32TokenContract(address || undefined, false)
   const token: Token | undefined = address ? tokens[address] : undefined
-
+  // console.info(tokenAddress)
   const tokenName = useSingleCallResult(token ? undefined : tokenContract, 'name', undefined, NEVER_RELOAD)
   const tokenNameBytes32 = useSingleCallResult(
     token ? undefined : tokenContractBytes32,
@@ -69,6 +69,7 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
     undefined,
     NEVER_RELOAD
   )
+  
   const symbol = useSingleCallResult(token ? undefined : tokenContract, 'symbol', undefined, NEVER_RELOAD)
   const symbolBytes32 = useSingleCallResult(token ? undefined : tokenContractBytes32, 'symbol', undefined, NEVER_RELOAD)
   const decimals = useSingleCallResult(token ? undefined : tokenContract, 'decimals', undefined, NEVER_RELOAD)
@@ -103,7 +104,10 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
 }
 
 export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
+  
   const isBNB = currencyId?.toUpperCase() === 'BNB'
   const token = useToken(isBNB ? undefined : currencyId)
+
+  // console.warn(token)
   return isBNB ? ETHER : token
 }

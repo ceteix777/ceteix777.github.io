@@ -60,6 +60,10 @@ const Swap = () => {
     useCurrency(loadedUrlParams?.inputCurrencyId),
     useCurrency(loadedUrlParams?.outputCurrencyId),
   ]
+  // console.info(loadedInputCurrency)
+  // console.info(loadedOutputCurrency)
+  // console.info(loadedUrlParams)
+
   const [dismissTokenWarning, setDismissTokenWarning] = useState<boolean>(false)
   const [transactionWarning, setTransactionWarning] = useState<{
     selectedToken: string | null
@@ -342,11 +346,11 @@ const Swap = () => {
 
   return (
     <Container>
-      <TokenWarningModal
+      {/* <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}
         onConfirm={handleConfirmTokenWarning}
-      />
+      /> */}
       <SyrupWarningModal
         isOpen={transactionWarning.selectedToken === 'SYRUP'}
         transactionType={transactionWarning.purchaseType}

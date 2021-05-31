@@ -242,10 +242,12 @@ export function queryParametersToSwapState(parsedQs: ParsedQs): SwapState {
 
   return {
     [Field.INPUT]: {
-      currencyId: inputCurrency,
+      // currencyId: inputCurrency,
+      currencyId: 'BNB',
     },
     [Field.OUTPUT]: {
-      currencyId: outputCurrency,
+      // currencyId: outputCurrency,
+      currencyId: '0xae768A3d387c3B65d382535a790370Af94bb1691', // UNDO T
     },
     typedValue: parseTokenAmountURLParameter(parsedQs.exactAmount),
     independentField: parseIndependentFieldURLParameter(parsedQs.exactField),
@@ -260,6 +262,7 @@ export function useDefaultsFromURLSearch():
   const { chainId } = useActiveWeb3React()
   const dispatch = useDispatch<AppDispatch>()
   const parsedQs = useParsedQueryString()
+  // console.info(parsedQs)
   const [result, setResult] = useState<
     { inputCurrencyId: string | undefined; outputCurrencyId: string | undefined } | undefined
   >()
@@ -267,6 +270,8 @@ export function useDefaultsFromURLSearch():
   useEffect(() => {
     if (!chainId) return
     const parsed = queryParametersToSwapState(parsedQs)
+    // console.info("console.info(parsed)")
+    // console.info(parsed)
 
     dispatch(
       replaceSwapState({
